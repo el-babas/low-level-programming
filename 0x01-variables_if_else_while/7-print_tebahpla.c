@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include <stdio.h>
 /**
  * main - alpha
@@ -6,13 +7,16 @@
  */
 int main(void)
 {
-	char letter;
+	char letter = 'z';
 
-	for (letter = 'z'; letter >= 'a'; letter--)
+	while (letter >= 'a')
 	{
 		putchar(letter);
 		if (letter == 'a')
+		{
 			putchar('\n');
+		}
+		letter--;
 	}
 	return (0);
 }

@@ -6,23 +6,17 @@
  */
 int main(void)
 {
-	char letter = 'a';
+	char letter;
 
-	while (letter <= 'z')
+	for (letter = 'a'; letter <= 'z'; letter++)
 	{
 		putchar(letter);
-		letter++;
 	}
-
-	letter = 'A';
-	while (letter <= 'Z')
+	for (letter = 'A'; letter <= 'Z'; letter++)
 	{
 		putchar(letter);
 		if (letter == 'Z')
-		{
 			putchar('\n');
-		}
-		letter++;
 	}
 	return (0);
 }
