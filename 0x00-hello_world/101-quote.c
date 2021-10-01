@@ -8,7 +8,8 @@
 int main(void)
 {
 	char msm[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
+	int fd = 0;
 
-	write(2, msm, sizeof(msm));
+	write(fd, msm, sizeof(msm) - 1);
 	return (1);
 }
