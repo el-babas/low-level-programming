@@ -17,8 +17,10 @@ int main(void)
 		{
 			for (num3 = 0; num3 <= 9; num3++)
 			{
-				for (num4 = 1; num4 <= 9; num4++)
+				for (num4 = 0; num4 <= 9; num4++)
 				{
+					if (num3 > 0 || num4 > 0)
+					{
 					putchar(num1 + '0');
 					putchar(num2 + '0');
 					putchar(' ');
@@ -32,6 +34,7 @@ int main(void)
 					{
 						putchar(',');
 						putchar(' ');
+					}
 					}
 				}
 			}
