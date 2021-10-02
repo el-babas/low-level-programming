@@ -30,9 +30,7 @@ while (num1 <= 9)
 					putchar(num3 + '0');
 					putchar(num4 + '0');
 					if (num1 == 9 && num2 == 8 && num3 == 9 && num4 == 9)
-					{
 						putchar('\n');
-					}
 					else
 					{
 						putchar(',');
