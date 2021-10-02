@@ -6,41 +6,44 @@
  */
 int main(void)
 {
-	int num1;
-	int num2;
-	int num3 = 0;
-	int num4 = 0;
+	int num1, num2, num3, num4, temp1, temp2;
 
-	for (num1 = 0; num1 <= 9; num1++)
+	num1 = num2 = num3 = num4 = 0;
+	while (num1 <= 9)
 	{
-		for (num2 = 0; num2 <= 8; num2++)
+		num2 = 0;
+		while (num2 <= 9)
 		{
-			for (num3 = num1; num3 <= 9; num3++)
+			num3 = 0;
+			while (num3 <= 9)
 			{
-				if ((num2 == 8 && num4 == 0) || num2 == 0)
-					num4 = 0;
-				else
-					num4 = num2 + 1;
-				for (; num4 <= 9; num4++)
+				num4 = 0;
+				while (num4 <= 9)
 				{
-					putchar(num1 + '0');
-					putchar(num2 + '0');
-					putchar(' ');
-					putchar(num3 + '0');
-					putchar(num4 + '0');
-					if (num1 == 9 && num2 == 8 && num3 == 9 && num4 == 9)
+					temp1 = (num1 * 10) + num2;
+					temp2 = (num3 * 10) + num4;
+					if (temp1 < temp2)
 					{
-						putchar('\n');
-					}
-					else
-					{
+						putchar(num1 + '0');
+						putchar(num2 + '0');
+						putchar(' ');
+						putchar(num3 + '0');
+						putchar(num4 + '0');
+						if (num1 == 9 && num2 == 8 && num3 == 9 && num4 == 9)
+						{
+							putchar('\n');
+							break;
+						}
 						putchar(',');
 						putchar(' ');
 					}
+					num4++;
 				}
-				num4 = 0;
+				num3++;
 			}
+			num2++;
 		}
+		num1++;
 	}
 	return (0);
 }
