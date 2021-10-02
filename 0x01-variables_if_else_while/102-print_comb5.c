@@ -33,8 +33,11 @@ while (num1 <= 9)
 					{
 						putchar('\n');
 					}
-					putchar(',');
-					putchar(' ');
+					else
+					{
+						putchar(',');
+						putchar(' ');
+					}
 				}
 				num4++;
 			}
