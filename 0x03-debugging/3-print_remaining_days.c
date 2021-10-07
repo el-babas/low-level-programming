@@ -12,8 +12,8 @@
 
 void print_remaining_days(int month, int day, int year)
 {
-	/* Divisible entre 4, y no divisible entre 100 o divisible entre 400 */
-	if (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0))
+	/* Divisible entre 4, o no divisible entre 100 y divisible entre 400 */
+	if (year % 4 == 0 || (year % 100 != 0 && year % 400 == 0))
 	{
 		if (month >= 2 && day >= 60)
 		{
