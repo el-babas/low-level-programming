@@ -3,7 +3,7 @@
 #include <stdio.h>
 /**
  * positive_or_negative - sign of the number
- * @i: number
+ * @n: number
  * Return: 0 int
  */
 int positive_or_negative(int n)
