@@ -13,7 +13,7 @@ int main(void)
 	n1 = n2 = re = 1;
 	cont = isint = islong = 1;
 	printf("%ld", re);
-	while (cont < 98)
+	while (cont < 97)
 	{
 		if (isint == 1)
 		{
