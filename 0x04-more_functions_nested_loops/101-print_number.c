@@ -5,14 +5,18 @@
  */
 void print_number(int n)
 {
-	unsigned int number, base10 = 1;
+	unsigned int n2, number, base10 = 1;
 
 	if (n < 0)
 	{
 		_putchar('-');
-		n = -n;
+		n2 = -n;
 	}
-	number = n;
+	else
+	{
+		n2 = n;
+	}
+	number = n2;
 	/* Obtenemos su base */
 	while (number > 9)
 	{
@@ -20,12 +24,12 @@ void print_number(int n)
 		base10 = base10 * 10;
 	}
 	/* Descomponemos en base 10*/
-	number = n;
+	number = n2;
 	while (base10 > 1)
 	{
 		_putchar((number / base10) + '0');
 		number = number % base10;
 		base10 = base10 / 10;
 	}
-	_putchar((n % 10) + '0');
+	_putchar((n2 % 10) + '0');
 }
