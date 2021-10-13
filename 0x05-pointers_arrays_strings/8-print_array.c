@@ -13,5 +13,8 @@ void print_array(int *a, int n)
 	{
 		printf("%d, ", *(a + x));
 	}
-	printf("%d\n", *(a + x));
+	if (n > 0)
+	{
+		printf("%d\n", *(a + x));
+	}
 }
