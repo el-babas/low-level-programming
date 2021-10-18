@@ -16,5 +16,10 @@ char *_strchr(char *s, char c)
 			return (s + x);
 		}
 	}
+	/*si c es null toda cadena(*s) termina con null*/
+	if (*(s + x) == c)
+	{
+		return (s + 1);
+	}
 	return ('\0');
 }
