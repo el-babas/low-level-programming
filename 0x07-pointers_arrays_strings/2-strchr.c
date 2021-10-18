@@ -9,7 +9,7 @@ char *_strchr(char *s, char c)
 {
 	unsigned int x;
 
-	for (x = 0; *(s + x) != '\0'; x++)
+	for (x = 0; *(s + x); x++)
 	{
 		if (*(s + x) == c)
 		{
@@ -19,7 +19,7 @@ char *_strchr(char *s, char c)
 	/*si c es null toda cadena(*s) termina con null*/
 	if (*(s + x) == c)
 	{
-		return (s + 1);
+		return (s + x);
 	}
 	return ('\0');
 }
