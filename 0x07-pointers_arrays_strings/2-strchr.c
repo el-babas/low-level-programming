@@ -7,18 +7,14 @@
  */
 char *_strchr(char *s, char c)
 {
-	unsigned int x, exists = 0;
+	unsigned int x;
 
 	for (x = 0; *(s + x); x++)
 	{
 		if (*(s + x) == c)
 		{
-			exists = 1;
-			break;
+			return (s + x);
 		}
 	}
-	if (exists == 0)
-		return ('\0');
-	else
-		return (s + x);
+	return ('\0');
 }
