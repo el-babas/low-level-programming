@@ -3,7 +3,7 @@
  * _memset - fills memoty with a constant byte
  * @s: string
  * @b: character
- * n: size
+ * @n: size
  * Return: string
  */
 char *_memset(char *s, char b, unsigned int n)
