@@ -9,6 +9,10 @@ char *_strstr(char *haystack, char *needle)
 {
 	unsigned int x, xx, y, equal;
 
+	if (*(needle) == '\0')
+	{
+		return (haystack);
+	}
 	for (x = 0; *(haystack + x); x++)
 	{
 		equal = 0;
