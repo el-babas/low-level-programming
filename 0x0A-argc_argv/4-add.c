@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <ctype.h>
 /**
  * main - funtion main
  * @argc: size array argv
@@ -8,25 +9,20 @@
  */
 int main(int argc, char *argv[])
 {
-	int x, sum = 0, tmp;
+	int x, y, sum = 0;
 
-	if (argc > 1)
+	for (x = 1; x < argc; x++)
 	{
-		for (x = 1; x < argc; x++)
+		for (y = 0; *(argv[x] + y); y++)
 		{
-			tmp = atoi(argv[x]);
-			if (tmp == 0 && *argv[x] != '0')
+			if (!isdigit(argv[x][y]))
 			{
 				printf("Error\n");
 				return (1);
 			}
-			sum += atoi(argv[x]);
 		}
-		printf("%d\n", sum);
+		sum += atoi(argv[x]);
 	}
-	else
-	{
-		printf("0\n");
-	}
+	printf("%d\n", sum);
 	return (0);
 }
