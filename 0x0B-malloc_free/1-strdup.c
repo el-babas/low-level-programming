@@ -10,10 +10,10 @@ char *_strdup(char *str)
 	unsigned int x, size = 0;
 	char *word;
 
-	while (*(str + size))
-		size++;
 	if (str == NULL)
 		return (NULL);
+	while (*(str + size))
+		size++;
 	word = (char *)malloc(sizeof(char) * (size + 1));
 	if (word == NULL)
 		return (NULL);
