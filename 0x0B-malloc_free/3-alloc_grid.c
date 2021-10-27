@@ -24,6 +24,10 @@ int **alloc_grid(int width, int height)
 		*(numbers + x) = (int *)malloc(width * sizeof(int));
 		if (*(numbers + x) == NULL)
 		{
+			/*Retrocedemos a la posicion anterior y liberamos*/
+			x = x - 1;
+			for (; x >= 0; x--)
+				free(*(numbers + x));
 			free(numbers);
 			return (NULL);
 		}
