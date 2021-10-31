@@ -13,7 +13,7 @@ int main(void)
 	n1 = n2 = re = 1;
 	cont = isint = islong = 1;
 	printf("%ld", re);
-	while (cont < 97)
+	while (cont < 98)
 	{
 		if (isint == 1)
 		{
@@ -25,17 +25,17 @@ int main(void)
 			if (islong == 1)
 			{
 				/*Dividimos el numero en dos parte*/
-				nl1 = n1 % 10000000000;
-				nl2 = n2 % 10000000000;
-				n1 = n1 / 10000000000;
-				n2 = n2 / 10000000000;
+				nl1 = n1 % 1000000000;
+				nl2 = n2 % 1000000000;
+				n1 = n1 / 1000000000;
+				n2 = n2 / 1000000000;
 				islong = 0;
 			}
 			rel = nl1 + nl2;
 			re = n1 + n2;
-			printf(", %ld%ld", (re + (rel / 10000000000)), (re % 10000000000));
+			printf(", %ld%ld", (re + (rel / 1000000000)), (re % 1000000000));
 			nl1 = nl2;
-			nl2 = rel % 10000000000;
+			nl2 = rel % 1000000000;
 		}
 		n1 = n2;
 		n2 = re;
