@@ -11,7 +11,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	va_list args_cdn;
 	char *cdn;
 
-	if (separator != NULL && *(separator) && n > 0)
+	if (separator != NULL)
 	{
 		va_start(args_cdn, n);
 		for (i = 0; i < n; i++)
