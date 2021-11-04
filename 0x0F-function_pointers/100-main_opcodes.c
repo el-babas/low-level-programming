@@ -9,7 +9,7 @@
 int main(int argc, char *argv[])
 {
 	int bytes, x;
-	int (*file)(int, char **) = &main;
+	int (*file)(int, char **) = main;
 	char op_code;
 
 	if (argc != 2)
@@ -25,11 +25,11 @@ int main(int argc, char *argv[])
 	}
 	for (x = 0; x < bytes; x++)
 	{
-		op_code = *(char *)(*file);
-		printf("%02x", op_code);
+		op_code = *(char *)file;
+		printf("%02x", op_code & 0xFF);
 		if (x != bytes - 1)
 			printf(" ");
-		(file)++;
+		file++;
 	}
 	printf("\n");
 	return (0);
