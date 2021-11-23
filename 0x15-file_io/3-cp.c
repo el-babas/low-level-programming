@@ -15,19 +15,23 @@ void fill_file(int fd_from, int fd_to, char *argv[])
 {
 	char buffer[1024];
 	ssize_t fd_rfrom, fd_wto;
-	int max_buffer = 1024;
+	int max_buffer = 1024, cont = 0;
 
-	fd_rfrom = read(fd_from, buffer, max_buffer);
-	if (fd_rfrom < 0)
+	while (fd_rfrom == max_buffer || cont == 0)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
-	}
-	fd_wto = write(fd_to, buffer, fd_rfrom);
-	if (fd_wto < 0)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-		exit(99);
+		fd_rfrom = read(fd_from, buffer, max_buffer);
+		if (fd_rfrom < 0)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+			exit(98);
+		}
+		fd_wto = write(fd_to, buffer, fd_rfrom);
+		if (fd_wto < 0)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+			exit(99);
+		}
+		cont++;
 	}
 }
 /**
@@ -44,7 +48,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "%s\n", "Usage: cp file_from file_to");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 	fd_from = open(argv[1], O_RDONLY);
