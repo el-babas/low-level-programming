@@ -1,3 +1,4 @@
 # INFO! COMPILER C PROGRAMS
-all: school.c main.c m.h
+all: school
+school: school.c main.c m.h
 	gcc school.c main.c -o school
