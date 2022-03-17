@@ -11,7 +11,7 @@ def island_perimeter(grid):
     * 1 represents a land zone
     * One cell is a square with side length 1
     * Grid cells are connected horizontally/vertically (not diagonally).
-    * Grid is rectangular, width and height don’t exceed 100.
+    * Grid is rectangular, width and height don't exceed 100.
 
     Args:
         grid(list): List of list of integers
