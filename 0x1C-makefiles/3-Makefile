@@ -1,0 +1,33 @@
+#----- COMPILER C PROGRAMS WITH VARIABLES AND PREVIOS REQUIREMENTS. -----#
+
+## REGION [Variables]
+
+CC=gcc
+SRC=main.c school.c
+OBJ=$(SRC:%.c=%.o)
+NAME=school
+RM=rm -f
+
+## END [Variables]
+
+## REGION [Rules]
+
+### Info: General rule compile .c files.
+all: $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
+
+### Info: Deletes all Emacs and Vim temporary files along with the executable.
+clean:
+	$(RM) *~ $(NAME)
+
+### Info: Deletes the object files.
+oclean:
+	$(RM) $(OBJ)
+
+### Info: Deletes all Emacs and Vim temporary files, the executable, and the object files.
+fclean: clean oclean
+
+### Info: Forces recompilation of all source files.
+re: oclean all
+
+## END [Rules]
