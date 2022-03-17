@@ -22,23 +22,15 @@ def island_perimeter(grid):
     water = 0
     rows = len(grid)
     result = 0
-    cont = 0
-    for x in range(1, rows - 1):
-        for y in range(1, len(grid[x]) - 1):
+    for x in range(0, rows):
+        for y in range(0, len(grid[x])):
             if grid[x][y] == land:
-                cont = 0
-                if grid[x][y + 1] == water:
+                if (y + 1) < len(grid[x]) and grid[x][y + 1] == water:
                     result += 1
-                    cont += 1
-                if grid[x][y - 1] == water:
+                if (y - 1) != -1 and grid[x][y - 1] == water:
                     result += 1
-                    cont += 1
-                if grid[x + 1][y] == water:
+                if (x + 1) < rows and grid[x + 1][y] == water:
                     result += 1
-                    cont += 1
-                if grid[x - 1][y] == water:
+                if (x - 1) != -1 and grid[x - 1][y] == water:
                     result += 1
-                    cont += 1
-                if cont == 4:
-                    result -= 4
     return result
