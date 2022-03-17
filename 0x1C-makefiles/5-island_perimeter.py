@@ -19,19 +19,18 @@ def island_perimeter(grid):
         Returns the perimeter of the island described in grid.
     """
     land = 1
-    perimeter = 4
+    water = 0
     rows = len(grid)
     result = 0
     for x in range(1, rows - 1):
         for y in range(1, len(grid[x]) - 1):
             if grid[x][y] == land:
-                result += perimeter
-                if grid[x][y + 1] == land:
-                    result -= 1
-                if grid[x][y - 1] == land:
-                    result -= 1
-                if grid[x + 1][y] == land:
-                    result -= 1
-                if grid[x - 1][y] == land:
-                    result -= 1
+                if grid[x][y + 1] == water:
+                    result += 1
+                if grid[x][y - 1] == water:
+                    result += 1
+                if grid[x + 1][y] == water:
+                    result += 1
+                if grid[x - 1][y] == water:
+                    result += 1
     return result
