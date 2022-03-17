@@ -7,7 +7,7 @@ SRC=main.c school.c
 
 ## END [Variables]
 
-## END [Rules]
+## REGION [Rules]
 
 ### Info: General rule.
 all:

@@ -26,6 +26,7 @@ def island_perimeter(grid):
     for x in range(1, rows - 1):
         for y in range(1, len(grid[x]) - 1):
             if grid[x][y] == land:
+                cont = 0
                 if grid[x][y + 1] == water:
                     result += 1
                     cont += 1
