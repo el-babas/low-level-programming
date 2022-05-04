@@ -14,12 +14,14 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 {
 	size_t root = 0, i = 0;
 	/* st = start and ed = end */
-	listint_t *st = list, *ed = list;
+	listint_t *st = NULL, *ed = NULL;
 
 	if (list == NULL || size == 0)
 		return (NULL);
 
 	root = sqrt(size);
+	st = list;
+	ed = list;
 
 	while (ed->next != NULL && ed->n < value)
 	{
