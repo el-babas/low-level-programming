@@ -12,7 +12,7 @@
  */
 listint_t *jump_list(listint_t *list, size_t size, int value)
 {
-	size_t root = 0, i = 0;
+	size_t root = 0, index = 0;
 	/* st = start and ed = end */
 	listint_t *st = NULL, *ed = NULL;
 
@@ -23,10 +23,11 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 	st = list;
 	ed = list;
 
-	while (ed->next != NULL && ed->n < value)
+	while (index < size && ed->next != NULL && ed->n < value)
 	{
 		st = ed;
-		for (i = 0; i < root && ed->next != NULL; i++)
+		index = st->index + root;
+		while (ed->next != NULL && ed->index < index)
 			ed = ed->next;
 		printf("Value checked array[%ld] = [%d]\n", ed->index, ed->n);
 	}
