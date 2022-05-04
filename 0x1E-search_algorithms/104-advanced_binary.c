@@ -48,17 +48,12 @@ int recursive_binary_search(int *array, size_t start, size_t end, int value)
 
 	middle = ((end - start) / 2) + start;
 
-	if (array[middle] == value)
-	{
-		/* Add this condition to make sure we always get the first match */
-		if (middle > 0 && array[middle - 1] == value)
-			return (recursive_binary_search(array, start, middle, value));
-		else
-			return (middle);
-	}
+	/* Add this condition to make sure we always get the first match */
+	if (array[middle] == value && array[middle - 1] != value)
+		return (middle);
 
-	if (array[middle] > value)
-		return (recursive_binary_search(array, start, middle - 1, value));
+	if (array[middle] >= value)
+		return (recursive_binary_search(array, start, middle, value));
 	if (array[middle] < value)
 		return (recursive_binary_search(array, middle + 1, end, value));
 
