@@ -16,7 +16,7 @@ int advanced_binary(int *array, size_t size, int value)
 {
 	size_t index = 0;
 
-	if (array == NULL)
+	if (array == NULL || size == 0)
 		return (-1);
 
 	index = recursive_binary_search(array, index, size - 1, value);
