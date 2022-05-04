@@ -29,13 +29,13 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 		index = st->index + root;
 		while (ed->next != NULL && ed->index < index)
 			ed = ed->next;
-		printf("Value checked array[%ld] = [%d]\n", ed->index, ed->n);
+		printf("Value checked at index [%ld] = [%d]\n", ed->index, ed->n);
 	}
 
 	printf("Value found between indexes [%ld] and [%ld]\n", st->index, ed->index);
 	for ( ; st != NULL && st->index <= ed->index; st = st->next)
 	{
-		printf("Value checked array[%ld] = [%d]\n", st->index, st->n);
+		printf("Value checked at index [%ld] = [%d]\n", st->index, st->n);
 		if (st->n == value)
 			return (st);
 	}
