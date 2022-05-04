@@ -1,1 +1,6 @@
-./.vscode/
+#ignore compilate (files without extension).
+*
+!/**/
+!*.*
+#ignore directory.
+/.vscode/
