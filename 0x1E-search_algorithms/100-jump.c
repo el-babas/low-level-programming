@@ -14,18 +14,16 @@ int jump_search(int *array, size_t size, int value)
 {
 	size_t root = 0, i_start = 0, i_end = 0, i = 0;
 
-	if (array == NULL || size == 0 || value < array[0])
+	if (array == NULL || size == 0)
 		return (-1);
 
-	root = (size_t)sqrt((double)size);
+	root = sqrt(size);
 
 	for (i = 0; i < size; i = i + root)
 	{
 		i_start = i_end;
 		i_end = i_start + root;
 		printf("Value checked array[%ld] = [%d]\n", i, array[i]);
-		if (array[i] == value)
-			return (i);
 		if (array[i_end + root] > value)
 			break;
 	}
